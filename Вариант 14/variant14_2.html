@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <link rel="stylesheet" href="var14_2.css">
+<head>
+
+</head>
+
+<body>
+<script>
+let n = prompt("n=");
+if (isNaN(parseFloat(n)) || !isFinite(n) || Number(n) <= 2 || Number(n) >= 15) {
+     document.write("Wrong number");
+} else {
+    let width = 100;
+    n = Number(n);
+    for (let i = 0; i < n; i++) {
+        document.write(`<hr width=${width}%>`);
+        width -= 100/n;
+    }
+    
+    
+    let html = '<table>';
+    let classId = '';
+    let k = 0;
+
+    for (let i = 0; i < n; i++){
+      html += '<tr>';
+      for (j = 0; j < n; j++) {
+          
+        if (i % 2 == 0) {
+          if (k < 2) {
+            classId = 'black';
+          } else {
+            classId = 'white';
+          }
+          k++;
+        } else {
+          
+          if (k < 2) {
+            classId = 'white';
+          } else {
+            classId = 'black';
+          }
+          k++;
+        }
+
+        if (k == 3) {
+          k = 0;
+        }
+
+        html += `<td class=${ classId }></td>`;
+      }
+      k = 0;
+      html += '</tr>';
+    }
+
+     html += '</table>';
+    document.write(html);
+    
+    
+    width = 100/n;
+    for (let i = 0; i < n; i++) {
+        document.write(`<hr width=${width}%>`);
+        width += 100/n;
+    }
+}
+</script>
+
+</body>
+
+</html>

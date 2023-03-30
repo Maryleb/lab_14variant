@@ -1,0 +1,17 @@
+table {
+  border: 4px double #399;
+  width: 33%;
+  margin: auto;
+}
+td {
+  border: 1px solid #333; 
+  padding: 10px;  
+ }
+
+.black {
+  background-color: black;
+}
+.white {
+  background-color: white;
+}
+
